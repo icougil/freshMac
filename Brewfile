@@ -30,12 +30,14 @@ brew "wget"
 # Cask apps
 cask "alfred"
 cask "android-file-transfer"
-cask "android-sdk"
+# KO - requires java
+#cask "android-sdk"
 cask "atom"
 cask "box-sync"
 cask "charles"
 cask "dbeaver-community"
-cask "dbvisualizer"
+# KO - requires java
+#cask "dbvisualizer"
 cask "docker"
 cask "dropbox"
 cask "dupeguru"
