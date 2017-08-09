@@ -1,4 +1,6 @@
 tap "caskroom/cask"
+# upgrade casks
+tap "buo/cask-upgrade"
 
 brew "awscli"
 brew "bash-completion"
@@ -70,7 +72,7 @@ cask "vlc"
 cask "xmind"
 cask "wireshark"
 
-# Mac App Store
+# Mac App Store
 mas "Be Focused", id: 973134470
 mas "Gapplin", id: 768053424
 mas "Giphy Capture", id: 668208984

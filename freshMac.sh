@@ -16,12 +16,6 @@ brew update
 brew tap homebrew/bundle
 brew bundle
 
-# cask
-brew tap cakroom/cask
-
-# upgrade casks
-brew tap buo/cask-upgrade
-
 # apps=( atom sublime iterm2 intellij-idea docker postman dupeguru soapui xmind dbeaver-community google-chrome google-hangouts spectacle vlc dropbox box-sync firefox skype spotify charles google-backup-and-sync alfred flux slack telegram libreoffice android-file-transfer android-sdk the-unarchiver gpgtools lastpass enpass jdownloader tunnelblick qbittorrent inkscape gimp dbvisualizer dbeaver-community jd-gui virtualbox minikube wireshark );
 # CMD="echo brew cask install"
 # for app in "${apps[@]}"
