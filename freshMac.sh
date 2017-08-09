@@ -30,9 +30,6 @@ brew bundle
 # 	$CMD $app
 # done
 
-# Link Cask Apps to Alfred
-brew cask alfred link
-
 brew cleanup -s
 # we can also remove all the installers from the brew cache folder...
 # rm -rf ${brew --cache}
@@ -42,7 +39,7 @@ brew cask cleanup
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-$CMD="echo sdk install"
+CMD="sdk install"
 apps=( java maven groovy gradle )
 for app in "${apps[@]}"
 do

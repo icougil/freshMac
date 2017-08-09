@@ -50,7 +50,8 @@ cask "gpgtools"
 cask "google-backup-and-sync"
 cask "google-chrome"
 cask "google-hangouts"
-cask "inkscape"
+# KO - requires cask install xquartz
+#cask "inkscape"
 cask "intellij-idea"
 cask "iterm2"
 cask "jd-gui"
@@ -76,9 +77,11 @@ cask "wireshark"
 
 # Mac App Store
 mas "Be Focused", id: 973134470
-mas "Gapplin", id: 768053424
+# Unavailable
+# mas "Gapplin", id: 768053424
 mas "Giphy Capture", id: 668208984
-mas "GIFs", id: 662754936
+# Unavailable
+# mas "GIFs", id: 662754936
 mas "IP Scanner", id: 404167149
 mas "Irvue", id: 1039633667
 #mas "SnappyApp", id: 512617038
