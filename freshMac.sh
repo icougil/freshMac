@@ -3,7 +3,7 @@ set -e -x
 
 # Mac will ask for installing command line developer tools
 # git
-xcode-select --install
+#xcode-select --install
 
 # brew - https://brew.sh/
 if test ! $(which brew); then
@@ -42,9 +42,17 @@ brew cask cleanup
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-$CMD="echo sdk install"
+rbenv init
+
+$CMD="sdk install"
 apps=( java maven groovy gradle )
 for app in "${apps[@]}"
 do
 	$CMD $app
 done
+
+# iterm2 - integration and utilities
+curl -L https://iterm2.com/misc/install_shell_integration_and_utilities.sh | bash
+
+sudo easy_install pip
+sudo pip install virtualenv
