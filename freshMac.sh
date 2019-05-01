@@ -5,48 +5,43 @@ set -e -x
 # git
 #xcode-select --install
 
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# oh-my-zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 # brew - https://brew.sh/
 if test ! $(which brew); then
-	echo /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+ 	echo /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew update
-
-# bundle
+brew update bundle
 brew tap homebrew/bundle
+# install all the apps
 brew bundle
 
-# apps=( atom sublime iterm2 intellij-idea docker postman dupeguru soapui xmind dbeaver-community google-chrome google-hangouts spectacle vlc dropbox box-sync firefox skype spotify charles google-backup-and-sync alfred flux slack telegram libreoffice android-file-transfer android-sdk the-unarchiver gpgtools lastpass enpass jdownloader tunnelblick qbittorrent inkscape gimp dbvisualizer dbeaver-community jd-gui virtualbox minikube wireshark );
-# CMD="echo brew cask install"
-# for app in "${apps[@]}"
-# do
-# 	$CMD $app
-# done
-# 
-# CMD="echo brew install"
-# apps=( wget tree jq nmap bash-completion bash-git-prompt h2 rbenv httpie go mas lynx pyenv node vcprompt git# -flow kubectl brew-cask-completion )
-# for app in "${apps[@]}"
-# do
-# 	$CMD $app
-# done
-
+# remove the installers
 brew cleanup -s
 # we can also remove all the installers from the brew cache folder...
 # rm -rf ${brew --cache}
-brew cask cleanup
+
+# make default bash the new one - https://apple.stackexchange.com/questions/193411/update-bash-to-version-4-0-on-osx
+chsh -s /usr/local/bin/bash
 
 # sdkman - sdkman.io
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
-
+#
 CMD="sdk install"
 apps=( java maven groovy gradle )
 for app in "${apps[@]}"
 do
-	$CMD $app
+ $CMD $app
 done
 
 brew install "maven-completion"
+brew cask install android-sdk
 
 # iterm2 - integration and utilities
 curl -L https://iterm2.com/misc/install_shell_integration_and_utilities.sh | bash
@@ -72,8 +67,8 @@ gem install jekyll bundler
 curl -fsSL https://mega.nz/MEGAsyncSetup.dmg -o MEGAsyncSetup.dmg && open MEGAsyncSetup.dmg
 
 # Tor browser
-TOR_VERSION="7.0.5"
-curl -fsSL https://github.com/TheTorProject/gettorbrowser/releases/download/v$TOR_VERSION/TorBrowser-$TOR_VERSION-osx64_en-US.dmg -o TorBrowser.dmg && open TorBrowser.dmg
+TOR_VERSION="8.0.8"
+curl -fsSL https://www.torproject.org/dist/torbrowser/8.0.8/TorBrowser-$TOR_VERSION-osx64_en-US.dmg -o TorBrowser.dmg && open TorBrowser.dmg
 
 # rust
 curl https://sh.rustup.rs -sSf | sh
@@ -82,6 +77,8 @@ curl https://sh.rustup.rs -sSf | sh
 cargo install loc
 
 # pyenv install env
+# python zlib missing - https://stackoverflow.com/questions/34200602/the-python-zlib-extension-was-not-compiled-on-mac-os-x-10-11-1
+sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
 pyenv install 2.7.13
 pyenv local 2.7.13
 
@@ -96,5 +93,13 @@ cd ..
 rm -rf youtube-upload-master/
 rm master.zip
 
+# https://github.com/powerline/fonts.git
+
 # tocdoc
 npm install -g doctoc
+
+# dredd
+npm install -g dredd
+
+# markdown-to-slides
+npm install markdown-to-slides -g
