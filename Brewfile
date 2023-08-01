@@ -1,4 +1,3 @@
-tap "caskroom/cask"
 # upgrade casks
 tap "buo/cask-upgrade"
 # completions
@@ -6,6 +5,8 @@ tap "jenkins-x/jx"
 tap "heroku/brew"
 tap "homebrew/cask-drivers"
 
+# test github actions in local
+brew "act"
 brew "ansible"
 brew "asciinema"
 brew "awscli"
@@ -15,26 +16,64 @@ brew "bash-completion"
 brew "bash-git-prompt"
 brew "bat"
 brew "brew-cask-completion"
+# tree improved
+brew "broot"
+# brew UI
+brew "cakebrew"
 brew "cloc"
+brew "clojure"
+brew "CleverCloud/homebrew-tap/clever-tools"
+# top for docker containers
+brew "ctop"
+# explore docker images
+brew "dive"
 brew "drafter"
+# better than du
+brew "duf"
+# better than ls
+brew "exa"
+# simpler than find
+brew "fd"
+# better autocomplete?
+brew "fig"
+# hour screensaver
+brew "fliqlo"
+# fake log generator
+brew "flog"
+# better than jq
+brew "fx"
+# command line finder than find, searching with UI
 brew "fzf"
+brew "fswatch"
+brew "garmin-express"
 brew "gist"
 brew "git"
+brew "git-delta"
 brew "git-flow"
 brew "gitlab-runner"
 brew "go"
+brew "google-drive"
 brew "h2"
 brew "heroku"
+cask "hiddenbar"
+# hexadecimal viewer
+brew "hexyl"
 brew "hstr"
 brew "htop"
 brew "httpie"
 brew "httrack"
 brew "hub"
 brew "ipfs"
+# better than jq for searching and navigate .json files
+brew "jid"
+# also better than jq
+brew "jless"
 brew "jq"
-brew "kitematic"
+brew "jmeter"
 brew "kubectl"
 brew "links"
+# better video recording tool
+brew "loom"
 brew "lynx"
 brew "mackup"
 brew "mas"
@@ -42,14 +81,33 @@ brew "mas"
 # requires maven, java, etc - sdkman
 brew "maven-completion"
 
+brew "minikube"
+brew "mockserver"
 brew "nmap"
-brew "node"
+brew "ncdu"
+#brew "node"        # not needed , managed by nvm
+brew "nvm"
+# brew "nodenv"     # replaced by nvm 
+
+# markdown saving notes
+brew "obsidian"
+# required to have AdoptOpenJDK system-wide (ex: running JDK mission control)
+brew "openjdk@11"
+
 brew "putty"
 brew "pyenv"
+# replacement opensource for Alfred
+brew "raycast"
 brew "rbenv"
+brew "sampler"
+# opened files per application
+cask "sloth"
 brew "ssh-copy-id"
+# for using haskell
+brew "stack"
 brew "terraform"
 brew "telnet"
+brew "thefuck"
 brew "tldr"
 
 # requires Java 1.8+
@@ -60,6 +118,10 @@ brew "trash"
 brew "tree"
 brew "vault"
 brew "vcprompt"
+
+# manage keyboard, windows, etc
+brew "xdotool"
+brew "yarn"
 brew "youtube-dl"
 brew "watch"
 brew "watchman"
@@ -76,6 +138,9 @@ cask "atom"
 cask "bitwarden"
 cask "box-sync"
 cask "charles"
+# clipboard history
+cask "clipy"
+cask "coreutils"
 cask "dbeaver-community"
 cask "dbvisualizer"
 cask "discord"
@@ -84,25 +149,30 @@ brew "docker-completion"
 cask "dropbox"
 cask "dupeguru"
 cask "dbeaver-community"
-# cask "enpass"
+cask "eclipse"
 cask "firefox"
 cask "flux"
+cask "gfxcardstatus"
 cask "gimp"
 cask "google-backup-and-sync"
 cask "google-chrome"
 cask "google-hangouts"
 cask "gpg-suite"
+cask "grammarly"
 cask "xquartz"
 # requires install xquartz
 cask "inkscape"
 cask "intellij-idea"
 cask "iterm2"
+cask "jetbrains-toolbox"
 cask "jd-gui"
 cask "jdownloader"
+cask "kitematic"
 cask "lastpass"
 cask "libreoffice"
-cask "minikube"
+cask "meld"
 cask "megasync"
+cask "opera"
 cask "pock"
 cask "postman"
 cask "protonvpn"
@@ -120,6 +190,7 @@ cask "the-unarchiver"
 cask "tor-browser"
 cask "tunnelblick"
 cask "tunnelbear"
+cask "udeler"
 cask "virtualbox"
 cask "visual-studio-code"
 cask "vlc"
